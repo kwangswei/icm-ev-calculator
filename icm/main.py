@@ -1,7 +1,15 @@
 import streamlit as st
 from icm_ev import ICMEVCalculator
 
-st.set_page_config(layout="wide", page_title="ICM EV Calculator")
+st.set_page_config(
+    layout="wide",
+    page_title="ICM EV Calculator",
+    menu_items={
+        "Get help": "https://github.com/kwangswei/icm-ev-calculator/issues",
+        "Report a Bug": "https://github.com/kwangswei/icm-ev-calculator/issues",
+        "About": "Copyright 2024 JesseQ7. All rights reserved.",
+    },
+)
 st.title("ICM EV Calculator")
 
 with st.container():
@@ -69,3 +77,7 @@ if st.button("Calculate"):
         st.info("Call", icon=":material/check:")
     else:
         st.error("Fold", icon=":material/cancel:")
+
+
+st.divider()
+st.caption("<p style='text-align: center; color: grey;'>Copyright 2024 JesseQ7. All rights reserved.", unsafe_allow_html=True)
