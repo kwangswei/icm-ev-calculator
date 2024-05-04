@@ -7,7 +7,13 @@ st.title("ICM EV Calculator")
 with st.container():
     st.subheader("Settings", divider="rainbow")
 
-    st.caption('Equity ref: https://openpokertools.com/range-equity.html')
+    with st.expander("Help"):
+        st.markdown('''
+        - Calculate range-equity and enter the probability of win/tie/lose
+          - ref: https://openpokertools.com/range-equity.html
+        - Enter the prizes and players's stack. Separate with '/'
+        - Tell me the index of the hero and villain stacks. Starts from 0
+        ''')
 
     col1, col2, col3 = st.columns(3)
     with col1:
