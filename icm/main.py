@@ -19,7 +19,7 @@ with st.container():
         st.markdown('''
         - Calculate range-equity and enter the probability of win/tie/lose
           - ref: https://openpokertools.com/range-equity.html
-        - Enter the prizes and players's stack. Separate with '/'
+        - Enter the prize and players's stack. Separate with '/'
         - Tell me the index of the hero and villain stacks. Starts from 0
         ''')
 
@@ -33,7 +33,7 @@ with st.container():
 
     col1, col2 = st.columns(2)
     with col1:
-        prizes = st.text_input("prizes", value="100/30/10").split("/")
+        prize = st.text_input("prize", value="100/30/10").split("/")
     with col2:
         stacks = st.text_input("stacks", value="20/10/5").split("/")
 
@@ -50,7 +50,7 @@ if st.button("Calculate"):
         p_tie=p_tie,
         p_lose=p_lose,
         stacks=stacks[:],
-        prizes=prizes[:],
+        prizes=prize[:],
         hero=idx_hero,
         villain=idx_villain,
     )
