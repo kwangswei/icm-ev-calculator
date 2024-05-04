@@ -7,7 +7,7 @@ st.set_page_config(
     menu_items={
         "Get help": "https://github.com/kwangswei/icm-ev-calculator/issues",
         "Report a Bug": "https://github.com/kwangswei/icm-ev-calculator/issues",
-        "About": "Copyright 2024 JesseQ7. All rights reserved.",
+        "About": "Copyright 2024 JesseQ7. All rights reserved.\nkwangswei@gmail.com",
     },
 )
 st.title("ICM EV Calculator")
@@ -80,4 +80,4 @@ if st.button("Calculate"):
 
 
 st.divider()
-st.caption("<p style='text-align: center; color: grey;'>Copyright 2024 JesseQ7. All rights reserved.", unsafe_allow_html=True)
+st.caption("<p style='text-align: center; color: grey;'>Copyright 2024 JesseQ7. All rights reserved.</br>kwangswei@gmail.com", unsafe_allow_html=True)
