@@ -33,9 +33,9 @@ with st.container():
 
     col1, col2 = st.columns(2)
     with col1:
-        prize = st.text_input("prize", value="100/30/10").split("/")
+        prize = list(map(float, st.text_input("prize", value="100/30/10").split("/")))
     with col2:
-        stacks = st.text_input("stacks", value="20/10/5").split("/")
+        stacks = list(map(float, st.text_input("stacks", value="20/10/5").split("/")))
 
     col1, col2 = st.columns(2)
     with col1:

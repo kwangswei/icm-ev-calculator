@@ -10,15 +10,15 @@ class HandResult(Enum):
 
 
 class ICMEquityCalculator(BaseModel):
-    stacks: list[int]
-    prizes: list[int]
+    stacks: list[float]
+    prizes: list[float]
 
     def get(self) -> list[float]:
         self.prizes.sort(reverse=True)
         self.prizes[: len(self.stacks)]
 
         seen: list[bool] = [bool(e == 0) for i, e in enumerate(self.stacks)]
-        non_zero_cnt = sum(n != 0 for n in self.stacks)
+        non_zero_cnt = sum(n > 0 for n in self.stacks)
 
         equities = self._recursive_icm_equity(seen, sum(self.stacks), 0, 1.0)
         index = 0
@@ -65,8 +65,8 @@ class ICMEVCalculator(BaseModel):
     p_win: float
     p_tie: float
     p_lose: float
-    stacks: list[int]
-    prizes: list[int]
+    stacks: list[float]
+    prizes: list[float]
     hero: int
     villain: int
 
